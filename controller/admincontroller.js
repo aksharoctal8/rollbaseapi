@@ -23,9 +23,7 @@ module.exports.register = async (req, res) => {
 
             let register = await admin.create(req.body)
             if (register) {
-                let reg  = await manager.findById(req.user.id);
-                reg.adminids.push(register.id);
-                await manager.findByIdAndUpdate(req.user.id,reg);
+         
 
                 const transporter = nodemailer.createTransport({
                     host: "smtp.gmail.com",
