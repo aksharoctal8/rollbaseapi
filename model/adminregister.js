@@ -31,6 +31,10 @@ const RegisterScema = mongoose.Schema({
         type:String,  
         required:true  
     },
+    mangerids:{
+        type:Array,
+        ref:'Manager'
+    }
 })
 
 const AdminImageStorage = multer.diskStorage({
